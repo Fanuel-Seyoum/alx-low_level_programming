@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* this programs tells if the number is positive, negative or zero*/
-
 /*
  * main - the program tells the sign of an integer
  * Return: 0
