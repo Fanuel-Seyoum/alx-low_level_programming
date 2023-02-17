@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
+/* more headers goes there*/
+
+/* betty style doc for function main goes there */
+/**
  * main - the program tells the sign of an integer
  * Return: 0
  */
