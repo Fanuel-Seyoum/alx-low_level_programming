@@ -10,18 +10,18 @@
 
 int main(void)
 {
-	int d, p;
+	int x, y;
 
-	for (d = '0'; d < '9'; d++)
+	for (x = '0'; x < '9'; x++)
 	{
-		for (p = d + 1; p <= '9'; p++)
+		for (y = x + 1; y <= '9'; y++)
 		{
 			if (p != d)
 			{
-				putchar(d);
-				putchar(p);
+				putchar(x);
+				putchar(y);
 
-				if (d == '8' && p == '9')
+				if (x == '8' && y == '9')
 					continue;
 
 				putchar(',');
