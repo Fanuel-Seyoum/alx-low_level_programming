@@ -24,11 +24,11 @@ int main(void)
                         lower++;
                 }
 	while
-	{
-		(upper <= 'z');
+		(upper <= 'Z')
+		{
 		putchar(upper);
 		upper++;
-	}
+		}
 
         putchar('\n');
         return (0);
