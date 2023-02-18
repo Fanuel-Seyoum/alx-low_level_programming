@@ -11,6 +11,7 @@
 int main(void)
 {
 	char lower;
+
 	lower = 'a';
 
 	while
@@ -19,5 +20,6 @@ int main(void)
 			putchar(lower);
 			lower++;
 		}
+	putchar('\n');
 	return (0);
 }
