@@ -18,5 +18,6 @@ int main(void)
 		{
 			printf("%d", num_list);
 			printf("\n");
+		}
 	return (0);
 }
