@@ -16,6 +16,7 @@ int main(void)
 	while
 		(num_list <= 10)
 		{
-			printf(num_list'\n');
+			printf("%d"num_list);
+			printf("\n");
 	return (0);
 }
