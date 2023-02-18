@@ -18,12 +18,18 @@ int main(void)
 	upper = 'A';
 
         while
-                (lower <= 'z' && upper <= 'Z')
+                (lower <= 'z')
                 {
                         putchar(lower);
-			putchar(upper);
                         lower++;
                 }
+	while
+	{
+		(upper <= 'z');
+		putchar(upper);
+		upper++;
+	}
+
         putchar('\n');
         return (0);
 }
