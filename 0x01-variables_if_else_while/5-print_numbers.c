@@ -14,7 +14,7 @@ int main(void)
 
 	num_list = 0;
 	while
-		(num_list <= 10)
+		(num_list < 10)
 		{
 			printf("%d", num_list);
 			num_list++;
