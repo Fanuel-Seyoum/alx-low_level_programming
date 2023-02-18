@@ -11,6 +11,7 @@
 int main(void)
 {
         char lower;
+	char upper;
 
         lower = 'a';
 
