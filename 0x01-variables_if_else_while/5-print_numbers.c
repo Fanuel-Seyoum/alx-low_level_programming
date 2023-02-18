@@ -19,6 +19,6 @@ int main(void)
 			printf("%d", num_list);
 			num_list++;
 		}
-	printf("\n")
+	printf("\n");
 	return (0);
 }
