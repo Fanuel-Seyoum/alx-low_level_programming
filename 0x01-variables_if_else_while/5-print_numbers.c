@@ -17,6 +17,7 @@ int main(void)
 		(num_list <= 10)
 		{
 			printf("%d", num_list);
+			num_list++;
 			printf("\n");
 		}
 	return (0);
