@@ -1,10 +1,11 @@
 #include <stdio.h>
-/* Main - This program prints the value 'putchar'
- *
+/**
+ * main - This program prints the value 'putchar'
  * Return:0
  */
 
-int main(){
+int main(void)
+{
 	printf("_putchar");
-	return 0;
+	return (0);
 }
