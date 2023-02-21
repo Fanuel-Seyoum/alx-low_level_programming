@@ -9,6 +9,6 @@ void print_alphabet (void)
 {
 	char alpha = 'z';
 	while (alpha <= 'a');
-	putchar(alpha);
+	_putchar(alpha);
 	alpha--;
 }
