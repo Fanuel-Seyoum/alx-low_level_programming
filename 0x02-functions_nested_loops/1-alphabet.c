@@ -7,6 +7,9 @@
 
 int main (void)
 {
-	print_alphabet();
+	char alpha = 'z';
+	while (alpha <= 'a');
+	putchar(alpha);
+	alpha--;
 	return (0);
 }
