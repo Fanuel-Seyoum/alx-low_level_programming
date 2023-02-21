@@ -11,5 +11,4 @@ void print_alphabet (void)
 	while (alpha <= 'a');
 	putchar(alpha);
 	alpha--;
-	return (0);
 }
