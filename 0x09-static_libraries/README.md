@@ -18,5 +18,20 @@ nm libmy.a
 
 the next step is running the git add
 =======
+
+For the second task
+create the file create_static_lib.sh and write the command below and then make the file to be excutable file using the chmod 'u+x' command
+
+#!/bin/bash
+gcc -Wall -pedantic -Werror -Wextra -c *.c
+ar -rc liball.a *.o
+ranlib liball.a
+
+
+
+
+
+
+
 0x09-Static_Libraries
 >>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f
