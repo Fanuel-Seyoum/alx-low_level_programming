@@ -30,4 +30,8 @@ unsigned int _strspn(char *s, char *accept)
 			break;
 	}
 	return (count);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

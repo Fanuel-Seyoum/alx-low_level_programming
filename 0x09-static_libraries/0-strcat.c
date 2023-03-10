@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #include "main.h"
+=======
+#include "holberton.h"
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f
 
 /**
  * _strcat - a function that concatenates two strings.
@@ -18,4 +22,8 @@ char *_strcat(char *dest, char *src)
 
 	*dest = '\0';
 	return (temp);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

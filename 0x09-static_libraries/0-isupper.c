@@ -20,4 +20,8 @@ int _isupper(int c)
 	}
 
 	return (isupper);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

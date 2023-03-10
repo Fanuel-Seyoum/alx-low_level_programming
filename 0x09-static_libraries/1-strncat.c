@@ -31,4 +31,8 @@ char *_strncat(char *dest, char *src, int n)
 
 	*dest = '\0';
 	return (temp);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

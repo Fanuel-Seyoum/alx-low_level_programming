@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 0x09
 
 I created all the .c files and the main.h file
@@ -16,3 +17,6 @@ We can also ist the symbols used in the library using the nm command as follows
 nm libmy.a
 
 the next step is running the git add
+=======
+0x09-Static_Libraries
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

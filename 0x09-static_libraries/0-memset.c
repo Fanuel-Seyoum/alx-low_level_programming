@@ -17,4 +17,8 @@ char *_memset(char *s, char b, unsigned int n)
 		s++;
 	}
 	return (start);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

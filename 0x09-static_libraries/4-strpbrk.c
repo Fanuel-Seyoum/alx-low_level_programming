@@ -25,4 +25,8 @@ char *_strpbrk(char *s, char *accept)
 		s++;
 	}
 	return (NULL);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

@@ -19,4 +19,8 @@ char *_strchr(char *s, char c)
 	if (c == *s)
 		return (s);
 	return (NULL);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

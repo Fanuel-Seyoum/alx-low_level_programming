@@ -31,4 +31,8 @@ int _atoi(char *s)
 		total = (-total);
 
 	return (total);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

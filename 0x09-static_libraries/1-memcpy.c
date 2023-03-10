@@ -18,4 +18,8 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 		dest++;
 	}
 	return (start);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

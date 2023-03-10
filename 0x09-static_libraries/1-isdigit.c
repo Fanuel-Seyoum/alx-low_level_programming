@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #include "main.h"
+=======
+#include "holberton.h"
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f
 
 /**
  * _isdigit - A function that checks for a digit (0 through 9).
@@ -20,4 +24,8 @@ int _isdigit(int c)
 	}
 
 	return (isdigit);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

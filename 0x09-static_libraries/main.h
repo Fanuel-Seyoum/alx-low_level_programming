@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef MAIN_H
 #define MAIN_H
 
@@ -26,3 +27,6 @@ char *_strstr(char *haystack, char *needle);
 #endif
 
 
+=======
+#ifndef1
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

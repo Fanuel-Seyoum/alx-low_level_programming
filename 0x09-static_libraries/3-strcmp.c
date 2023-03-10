@@ -20,4 +20,8 @@ int _strcmp(char *s1, char *s2)
 		i++;
 	}
 	return (0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f

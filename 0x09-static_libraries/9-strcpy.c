@@ -23,4 +23,8 @@ for ( ; i <= length; i++)
 	dest[i] = '\0';
 }
 return (dest);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 989b5087bea7d7698740075358bedb3aa9abf83f
