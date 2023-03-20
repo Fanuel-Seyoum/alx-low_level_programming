@@ -1,30 +1,60 @@
-#include "main.h"
+// #include "main.h"
 #include <stdlib.h>
 
+// /**
+//  * create_array - A function that creates an array of chars,
+//  * and initializes it with a specific char.
+//  * @size: The size of the array
+//  * @c: A character to initialized the array
+//  * Return: Apointer to the array or NULL if it fails
+//  */
+// char *create_array(unsigned int size, char c)
+// {
+// 	char *s;
+// 	unsigned int i = 0;
+
+// 	s = malloc(size * sizeof(char));
+
+// 	if (s == NULL)
+// 		return (NULL);
+
+// 	if (size == 0)
+// 		return (NULL);
+
+// 	while (i < size)
+// 	{
+// 		s[i] = c;
+// 		i++;
+// 	}
+// 	return (s);
+// }
+
+
+
+#include <stdio.h>
+#include <limits.h>
+
 /**
- * create_array - A function that creates an array of chars,
- * and initializes it with a specific char.
- * @size: The size of the array
- * @c: A character to initialized the array
- * Return: Apointer to the array or NULL if it fails
+ * main - introduction to malloc and free
+ *
+ * Return: 0.
  */
-char *create_array(unsigned int size, char c)
+int main(void)
 {
-	char *s;
-	unsigned int i = 0;
+    char *s;
+    int i;
 
-	s = malloc(size * sizeof(char));
-
-	if (s == NULL)
-		return (NULL);
-
-	if (size == 0)
-		return (NULL);
-
-	while (i < size)
-	{
-		s[i] = c;
-		i++;
-	}
-	return (s);
+    i = 0;
+    while (1)
+    {
+        s = malloc(INT_MAX);
+        if (s == NULL)
+        {
+            printf("Can't allocate %d bytes (after %d calls)\n", INT_MAX, i);
+            return (1);
+        }
+        s[0] = 'H';
+        i++;
+    }
+    return (0);
 }

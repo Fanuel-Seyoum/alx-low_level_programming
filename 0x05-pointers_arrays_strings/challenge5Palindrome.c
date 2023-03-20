@@ -14,6 +14,11 @@ int main()
     for (i = 0; i < len/2; i++)
     {
         if (theString[i] != theString[len-i-1])
+        /*
+        the condition checks if the string is palindrome,
+        finishes the for loop if the string is palindrome
+        breaks in the middle whenever it comes across a mis match and sets the glagger to be 4 and exits the code
+        */
         {
             flagger = 4;
             break;

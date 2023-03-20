@@ -8,21 +8,29 @@
  *
  * Return: Always 0.
  */
+void *malloc_checked(unsigned int b)
+{
+	void *ptr = malloc(b);
+
+	if (ptr == NULL)
+	{
+		exit(98);
+	}
+	return (ptr);
+}
+
 int main(void)
 {
-    char *c;
-    int *i;
-    float *f;
-    double *d;
 
-    c = malloc_checked(sizeof(char) * 1024);
+    char *c = (char*) malloc_checked(sizeof(char) * 9 );
     printf("%p\n", (void *)c);
-    i = malloc_checked(sizeof(int) * 402);
+    int *i = malloc_checked(sizeof(int) * 402);
     printf("%p\n", (void *)i);
-    f = malloc_checked(sizeof(float) * 100000000);
+    float *f = malloc_checked(sizeof(float) * 100000000);
     printf("%p\n", (void *)f);
-    d = malloc_checked(INT_MAX);
+    double *d = malloc_checked(INT_MAX);
     printf("%p\n", (void *)d);
+    printf("The size used by the char is %lu\n", (sizeof(c)));
     free(c);
     free(i);
     free(f);
