@@ -3,17 +3,15 @@
 #include <stdlib.h>
 
 /**
- * main - check the code
- * struct dog - Listing the detail informationf of my dog
- * @name: my pet's name
- * @age: my pet's age
- * @owner: My name, since I am the owner of my dog
- **
- * Return: Always 0.
+ * init_dog - a function that initialize a variable of type struct dog.
+ * @d: struct to initialize
+ * @name: Dog's name
+ * @age: Dog's age
+ * @owner: Dog's owner
+ * Return: Nothing.
  */
 
-
-void init_dog(struct dog *d, char* name, float age, char* owner)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
 	if (d == NULL)
 	{
