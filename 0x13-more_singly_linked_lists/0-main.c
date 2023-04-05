@@ -28,5 +28,6 @@ int main(void)
     n = print_listint(head);
     printf("-> %lu elements\n", n);
     free(new);
+    
     return (0);
 }
