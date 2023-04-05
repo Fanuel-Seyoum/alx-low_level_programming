@@ -1,3 +1,6 @@
+/*
+* the ASM
+*/
 extern printf
 
 	section .data

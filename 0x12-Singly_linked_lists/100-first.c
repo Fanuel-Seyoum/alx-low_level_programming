@@ -3,9 +3,9 @@
 /* Using constructors in C */
 void main_constructor(void) __attribute__((constructor));
 /**
- * main_constructor - A constructor function that prints a message
- * before main runs
- * Return: Nothing
+ * main_constructor - const
+ * aheadofmain
+ * Return: nill
  */
 void main_constructor(void)
 {
