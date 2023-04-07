@@ -54,15 +54,15 @@ void print_binary(unsigned long int n){
     for(int i=counter;i>=0;i--){
 
         if(i==counter){
-            printf("1");
+            _putchar("1");
             newNum = newNum - fold;
             fold = fold >> 1;
             continue;
         }
         if(newNum<fold){
-            printf("0");
+            _putchar("0");
         }else{
-            printf("1");
+            _putchar("1");
             newNum = newNum - fold;
         }
     
