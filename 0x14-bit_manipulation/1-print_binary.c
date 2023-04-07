@@ -18,18 +18,18 @@ void print_binary(unsigned long int n){
 
         if(i==counter){
             if(quotient==0){
-                printf("0");
+                _putchar("0");
             }else{
-                printf("1");
+                _putchar("1");
             }
             newNum = newNum - fold;
             fold = fold >> 1;
             continue;
         }
         if(newNum<fold){
-            printf("0");
+            _putchar("0");
         }else{
-            printf("1");
+            _putchar("1");
             newNum = newNum - fold;
         }
     
