@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 unsigned int binary_to_uint(const char *b){
     int count = 0;
@@ -37,6 +38,7 @@ unsigned int binary_to_uint(const char *b){
     }
 }
 
+
 void print_binary(unsigned long int n){
     int quotient = n;
     int fold = 1;
@@ -54,21 +56,39 @@ void print_binary(unsigned long int n){
     for(int i=counter;i>=0;i--){
 
         if(i==counter){
-            _putchar("1");
+            if(quotient==0){
+                printf("0");
+            }else{
+                printf("1");
+            }
             newNum = newNum - fold;
             fold = fold >> 1;
             continue;
         }
         if(newNum<fold){
-            _putchar("0");
+            printf("0");
         }else{
-            _putchar("1");
+            printf("1");
             newNum = newNum - fold;
         }
     
         fold = fold >> 1;
 
     }
+}
+
+int main(){
+    print_binary(0);
+    printf("\n");
+    print_binary(1);
+    printf("\n");
+    print_binary(98);
+    printf("\n");
+    print_binary(1024);
+    printf("\n");
+    print_binary((1 << 10) + 1);
+    printf("\n");
+    return (0);
 }
 
 
