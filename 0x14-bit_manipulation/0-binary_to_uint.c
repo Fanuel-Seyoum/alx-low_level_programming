@@ -30,7 +30,7 @@ unsigned int binary_to_uint(const char *b){
         result = result + (charH*twoMultiples);
     }
 
-    if(wrongChar==0){
+    if(wrongChar==0||b==NULL){
         return result;
     } else{
         return 0;
