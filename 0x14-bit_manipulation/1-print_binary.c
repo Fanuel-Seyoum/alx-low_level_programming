@@ -1,7 +1,7 @@
 #include "main.h"
 
 void print_binary(unsigned long int n){
-    int quotient = n;
+    unsigned long int quotient = n;
     int fold = 1;
     int counter = 0;
 
@@ -13,7 +13,7 @@ void print_binary(unsigned long int n){
         counter++;
         fold = fold+fold;
     }
-    int newNum = quotient;
+    unsigned long int newNum = quotient;
     for(int i=counter;i>=0;i--){
 
         if(i==counter){
