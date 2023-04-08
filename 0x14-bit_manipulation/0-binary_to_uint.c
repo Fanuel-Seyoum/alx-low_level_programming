@@ -7,6 +7,10 @@ unsigned int binary_to_uint(const char *b){
     int twoMultiples;
     int charH;
 
+    if(b==NULL){
+        return 0;
+    }
+
 	while (b[count] != '\0')   //counts the numbers of characters in the pointer argument
 	{
         count++;	
@@ -30,7 +34,7 @@ unsigned int binary_to_uint(const char *b){
         result = result + (charH*twoMultiples);
     }
 
-    if(wrongChar==0||b==NULL){
+    if(wrongChar==0){
         return result;
     } else{
         return 0;
