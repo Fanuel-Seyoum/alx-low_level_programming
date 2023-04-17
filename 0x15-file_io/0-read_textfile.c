@@ -18,7 +18,8 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 
 {
-	int openfd, readfd, writefd, open2fd;
+	int openfd,
+    ssize_t readcount, writecount;
 	char *temp;
 
     /* return zero if the file name is null */
@@ -33,13 +34,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
     openfd = open(filename, O_RDONLY);
 	if (openfd < 0)
 	{
-		free(temp);
 		return (0);
 	}
 
     /* Return zero if the file can not be read */
-	readfd = read(openfd, temp, letters);
-	if (readfd < 0)
+	readcount = read(openfd, temp, letters);
+	if (readcount < 0)
 	{
 		free(temp);
 		return (0);
@@ -47,13 +47,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 
     /* Write the characters */
-	writefd = write(STDOUT_FILENO, temp, readfd);
+	writecount = write(STDOUT_FILENO, temp, readcount);
 	free(temp);
 	close(openfd);
 
     /* returning the number of bytes to the main function */
-	if (writefd < 0)
+	if (writecount < 0)
 		return (0);
-	return ((ssize_t)writefd);
+	return ((ssize_t)writecount);
 }
 
