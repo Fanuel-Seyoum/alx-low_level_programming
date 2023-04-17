@@ -15,19 +15,19 @@
 
 int create_file(const char *filename, char *text_content)
 {
-    int openfd, writecounter, len;
+    int openfd, writecounter, length = 0 ;
 
 	if (filename == NULL)
 		return (-1);
 
     if (text_content != NULL)
 	{
-		for (len = 0; text_content[len];)
-			len++;
+		for (len = 0; text_content[length];)
+			length++;
 	}
-	openfd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
+	openfd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
     
-    writecounter = write(openfd, text_content, len);
+    writecounter = write(openfd, text_content, length);
 
     if (openfd < 0 || writecounter < 0)
     {
