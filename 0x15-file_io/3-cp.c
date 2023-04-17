@@ -9,15 +9,15 @@
 
 int safe_close(int);
 /**
- * main - Main function to copy files
- * @argc: The number of passed arguments
- * @argv: The pointers to array arguments
- * Return: 1 on success, exits on failure
+ * main - Main function for copy
+ * @argc: number of arguments to main function
+ * @argv: pointers to the arguments
+ * Return: 1 on success, exit on failure
  */
 int main(int argc, char *argv[])
 {
-	char buffer[1024];
-	int bytes_read = 0, _EOF = 1, from_fd = -1, to_fd = -1, error = 0;
+	char temp[1024];
+	int readcount = 0, _EOF = 1, from_fd = -1, to_fd = -1, error = 0;
 
 	if (argc != 3)
 	{
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 	while (_EOF)
 	{
-		_EOF = read(from_fd, buffer, 1024);
+		_EOF = read(from_fd, temp, 1024);
 		if (_EOF < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
 		}
 		else if (_EOF == 0)
 			break;
-		bytes_read += _EOF;
-		error = write(to_fd, buffer, _EOF);
+		readcount += _EOF;
+		error = write(to_fd, temp, _EOF);
 		if (error < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
