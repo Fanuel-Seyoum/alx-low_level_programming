@@ -1,5 +1,10 @@
-#include "main.h"
 
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include "main.h"
 
 /**
  * read_textfile - a function that reads a text file and prints to POSIX STDOUT
@@ -53,7 +58,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
     }
     
     /* returning the number of bytes to the main function */
-	close(fd);
+	close(openfd);
     free(temp);
     return ((ssize_t)writecount);
 }
