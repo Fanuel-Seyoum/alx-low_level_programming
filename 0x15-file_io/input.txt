@@ -1,1 +1,7 @@
-This is example of O_TRUNC: Sample file write2 using append flag  and the program really change the value inside the input.txt file
+Whenever the quick brown fox jumps over the lazy dog
+Some kind of fiction book writer will come and record the story
+But it may not be well and articulate while it depends on the author
+Actually there are some of them who are brilliant
+They will keep the full attention span of the reader in their book
+Nothing is as satisfying as reading their book
+

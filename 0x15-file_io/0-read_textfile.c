@@ -4,102 +4,56 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-
-#include <stdio.h>
-#include <stdlib.h>
-// #include "main.h"
+#include "main.h"
 
 
 /**
  * read_textfile - a function that reads a text file and prints to POSIX STDOUT
- * @filename: The filename to be open
+ * @filename: The filename to be opened
  * @letters: The number of letters to be read and print
  * Return: The number of letters read and printed, or 0 on failure
  */
-
-ssize_t read_textfile(const char *filename, size_t letters);
-
-#include <stdio.h>
-#include <stdlib.h>
-// #include "main.h"
-
-/**
- * main - reads and prints the content of a file to the standard output
- * @ac: number of command-line arguments
- * @av: array of command-line arguments
- *
- * Return: Always 0.
- */
-int main(int ac, char **av)
-{
-    ssize_t n;
-
-    /* Check if the program is given one command-line argument */
-    if (ac != 2)
-    {
-        /* Print an error message to the standard error */
-        dprintf(2, "Usage: %s filename\n", av[0]);
-        /* Exit the program with a non-zero exit status */
-        exit(1);
-    }
-    /* Read and print the first 114 characters of the file */
-    n = read_textfile(av[1], 114);
-    printf("\n(printed chars: %li)\n", n);
-    /* Read and print the entire file */
-    n = read_textfile(av[1], 1024);
-    printf("\n(printed chars: %li)\n", n);
-    /* Exit the program with a zero exit status */
-    return (0);
-}
 
 
 ssize_t read_textfile(const char *filename, size_t letters)
 
 {
-	int fdo, fdr, fdw;
+	int openfd, readfd, writefd, open2fd;
 	char *temp;
 
-    /*
-    * return zero if the file name is null
-    */
+    /* return zero if the file name is null */
 	if (filename == NULL)
 		return (0);
-
+    /* dynamically allocate memory for the buffer */
 	temp = malloc(sizeof(char) * letters);
 	if (temp == NULL)
 		return (0);
 
-	/*
-    * return zero if the file can't be opened
-    */
-    fdo = open(filename, O_RDONLY);
-	if (fdo < 0)
-	{
-		free(temp);
-		return (0);
-	}
-    /*
-    * return zero if the file can't be read
-    */
-	fdr = read(fdo, temp, letters);
-	if (fdr < 0)
+	/* Return zero if the file can not be opened */
+    openfd = open(filename, O_RDONLY);
+	if (openfd < 0)
 	{
 		free(temp);
 		return (0);
 	}
 
-    /*
-    * return zero if wrie fails
-    */
-	fdw = write(STDOUT_FILENO, temp, fdr);
+    /* Return zero if the file can not be read */
+	readfd = read(openfd, temp, letters);
+	if (readfd < 0)
+	{
+		free(temp);
+		return (0);
+	}
+
+
+    /* Write the characters */
+	writefd = write(STDOUT_FILENO, temp, readfd);
 	free(temp);
-	close(fdo);
+	close(openfd);
 
-    /*
-    * return zero if expected amount of byte isn't written
-    */
-	if (fdw < 0)
+    /* returning the number of bytes to the main function */
+	if (writefd < 0)
 		return (0);
-	return ((ssize_t)fdw);
+	return ((ssize_t)writefd);
 }
 
