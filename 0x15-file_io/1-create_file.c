@@ -29,7 +29,7 @@ int create_file(const char *filename, char *text_content)
     
     writecounter = write(openfd, text_content, len);
 
-    if (fd < 0 || writecounter < 0)
+    if (openfd < 0 || writecounter < 0)
     {
         return (-1);
     }
