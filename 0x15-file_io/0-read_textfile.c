@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -13,53 +12,57 @@
  * Return: The number of letters read and printed, or 0 on failure
  */
 
-
 ssize_t read_textfile(const char *filename, size_t letters)
 
 {
 	int openfd;
-    ssize_t readcount, writecount=0;
+	ssize_t readcount, writecount=0;
 	char *temp;
 
-    /* return zero if the file name is null */
+	/* return zero if the file name is null */
+
 	if (filename == NULL)
 		return (0);
-    /* dynamically allocate memory for the buffer */
+
+	/* dynamically allocate memory for the buffer */
+
 	temp = malloc(sizeof(char) * letters);
 	if (temp == NULL)
 		return (0);
-
+	
 	/* Return zero if the file can not be opened */
-    openfd = open(filename, O_RDONLY);
+	
+	openfd = open(filename, O_RDONLY);
 	if (openfd < 0)
 	{
 		free (temp);
-        return (0);
+		return (0);
 	}
-
-    /* Return zero if the file can not be read */
+	
+	/* Return zero if the file can not be read */
+	
 	readcount = read(openfd, temp, letters);
 	if (readcount < 0)
 	{
 		free(temp);
-        close(openfd);
+		close(openfd);
 		return (0);
 	}
 
+	/* Write the characters */
+	
+	writecount=write(STDOUT_FILENO,temp,readcount);
+	
+	/* return 0 if write counter fails */
 
-    /* Write the characters */
-	writecount = write(STDOUT_FILENO, temp, readcount);
-    /* returning zero if write counter fails */
 	if (writecount < 0)
-    {
-        free (temp);
-        close (openfd);
-        return (0);
-    }
-    
-    /* returning the number of bytes to the main function */
+	{
+		free (temp);
+		close (openfd);
+		return (0);
+	}
+	/* return no of bytes to main function */
 	close(openfd);
-    free(temp);
-    return ((ssize_t)writecount);
+	free(temp);
+	return ((ssize_t)writecount);
 }
-
