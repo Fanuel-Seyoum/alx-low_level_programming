@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include "main.h"
 
-int safe_close(int);
+int closefd(int);
 /**
  * main - Main function for copy
  * @argc: number of arguments to main function
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	if (to_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		safe_close(from_fd);
+		closefd(from_fd);
 		exit(99);
 	}
 
@@ -46,8 +46,8 @@ int main(int argc, char *argv[])
 		if (_EOF < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			safe_close(from_fd);
-			safe_close(to_fd);
+			closefd(from_fd);
+			closefd(to_fd);
 			exit(98);
 		}
 		else if (_EOF == 0)
@@ -57,29 +57,29 @@ int main(int argc, char *argv[])
 		if (error < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			safe_close(from_fd);
-			safe_close(to_fd);
+			closefd(from_fd);
+			closefd(to_fd);
 			exit(99);
 		}
 	}
-	error = safe_close(to_fd);
+	error = closefd(to_fd);
 	if (error < 0)
 	{
-		safe_close(from_fd);
+		closefd(from_fd);
 		exit(100);
 	}
-	error = safe_close(from_fd);
+	error = closefd(from_fd);
 	if (error < 0)
 		exit(100);
 	return (0);
 }
 
 /**
- * safe_close - A function that closes a file and prints error when closed file
+ * closefd - A function that closes a file and prints error when closed file
  * @description: Description error for closed file
  * Return: 1 on success, -1 on failure
  */
-int safe_close(int description)
+int closefd(int description)
 {
 	int error;
 
